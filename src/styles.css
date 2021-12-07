@@ -1,0 +1,12 @@
+.App {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+li:active {
+  color: blue;
+}
+
+li:hover {
+  color:blue;
+}

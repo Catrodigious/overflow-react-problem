@@ -9,10 +9,10 @@ export default function CampaignSearch(){
     const loadCampaigns = () => {
       getCampaigns()
         .then((data) => {
-          const names = data.map((campaign)=>campaign.name);
+          const names = data.map((campaign) => campaign.name);
           setExistingCampaigns(names);
         })
-        .catch((err)=>{
+        .catch((err) => {
             console.error("An error occurred upon attempting to fetch campaigns: ", err);
         })
     }
@@ -49,14 +49,15 @@ export default function CampaignSearch(){
                 <input type="text" id="campaignInput" placeholder="Campaign" onChange={onChooseCampaign} value={chosenCampaign} />
                 <ul>
                     { campaignMatch.length > 0 && 
-                        campaignMatch.map((campaign, index)=><li key={index} onClick={onMatchCampaign}>{campaign}</li>)
+                        campaignMatch.map((campaign, index) => <li key={index} onClick={onMatchCampaign}>{campaign}</li>)
                     }
                 </ul>
             </div>
             <div>
                 <button type="button">Back</button>
-                {/* only displays the 'next' button if the chosen campaign exists */}
-                { existingCampaigns.includes(chosenCampaign) && <button type="submit">Next</button> }
+                { /* only displays the 'next' button if the chosen campaign exists */ }
+                { existingCampaigns.includes(chosenCampaign) && 
+                    <button type="submit">Next</button> }
           </div>
         </form>
       </div>
